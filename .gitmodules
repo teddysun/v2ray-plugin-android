@@ -1,3 +1,4 @@
 [submodule "app/src/main/go/v2ray-plugin"]
 	path = app/src/main/go/v2ray-plugin
-	url = https://github.com/teddysun/v2ray-plugin.git
+	url = https://github.com/teddysun/v2ray-plugin
+	branch = v4
