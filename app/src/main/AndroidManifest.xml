@@ -36,7 +36,8 @@
                        android:value="libv2ray.so"/>
         </provider>
         <activity android:name=".ConfigActivity"
-                  android:theme="@style/Theme.Shadowsocks.Immersive">
+                  android:theme="@style/Theme.Shadowsocks.Immersive"
+                  android:exported="true">
             <intent-filter>
                 <action android:name="com.github.shadowsocks.plugin.ACTION_CONFIGURE"/>
                 <category android:name="android.intent.category.DEFAULT"/>
