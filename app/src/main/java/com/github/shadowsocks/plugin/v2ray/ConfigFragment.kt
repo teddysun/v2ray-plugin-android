@@ -78,7 +78,7 @@ class ConfigFragment : PreferenceFragmentCompat(), Preference.OnPreferenceChange
             options["mode"] == "grpc" && "tls" !in options -> "grpc"
             options["mode"] == "grpc" && "tls" in options -> "grpc-tls"
             else -> "websocket-http"
-        }.also { onPreferenceChange(null, it) }
+        }.also { onPreferenceChange(it) }
         host.text = options["host"] ?: "cloudfront.com"
         path.text = options["path"] ?: "/"
         mux.text = options["mux"] ?: "1"
@@ -105,7 +105,10 @@ class ConfigFragment : PreferenceFragmentCompat(), Preference.OnPreferenceChange
         }
     }
 
-    override fun onPreferenceChange(preference: Preference?, newValue: Any?): Boolean {
+    override fun onPreferenceChange(preference: Preference, newValue: Any?): Boolean {
+        return onPreferenceChange(newValue)
+    }
+    private fun onPreferenceChange(newValue: Any?): Boolean {
         val (mode, tls) = readMode(newValue as String)
         path.isEnabled = mode == null
         mux.isEnabled = mode == null
@@ -114,7 +117,7 @@ class ConfigFragment : PreferenceFragmentCompat(), Preference.OnPreferenceChange
         return true
     }
 
-    override fun onDisplayPreferenceDialog(preference: Preference?) {
+    override fun onDisplayPreferenceDialog(preference: Preference) {
         if (preference == certRaw) CertificatePreferenceDialogFragment().apply {
             setKey(certRaw.key)
             setTargetFragment(this@ConfigFragment, 0)
