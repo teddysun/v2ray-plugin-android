@@ -1,11 +1,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           xmlns:tools="http://schemas.android.com/tools"
-          package="com.github.shadowsocks.plugin.v2ray"
           android:installLocation="internalOnly">
     <uses-feature android:name="android.hardware.touchscreen"
                   android:required="false"/>
     <application android:allowBackup="false"
-                 android:extractNativeLibs="true"
                  android:label="v2ray-plugin"
                  android:icon="@mipmap/ic_launcher">
         <provider android:name=".BinaryProvider"
@@ -36,6 +34,7 @@
                        android:value="libv2ray.so"/>
         </provider>
         <activity android:name=".ConfigActivity"
+                  android:exported="true"
                   android:theme="@style/Theme.Shadowsocks.Immersive">
             <intent-filter>
                 <action android:name="com.github.shadowsocks.plugin.ACTION_CONFIGURE"/>
