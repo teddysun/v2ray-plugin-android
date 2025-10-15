@@ -17,8 +17,8 @@ android {
     defaultConfig {
         minSdk = 23
         targetSdk = 35
-        versionCode = 5040000
-        versionName = "5.40.0"
+        versionCode = 5041000
+        versionName = "5.41.0"
         testInstrumentationRunner = "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
