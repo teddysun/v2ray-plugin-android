@@ -7,7 +7,7 @@ plugins {
 
 android {
     val javaVersion = JavaVersion.VERSION_1_8
-    compileSdk = 35
+    compileSdk = 36
     compileOptions {
         sourceCompatibility = javaVersion
         targetCompatibility = javaVersion
@@ -16,7 +16,7 @@ android {
     namespace = "com.github.shadowsocks.plugin.v2ray"
     defaultConfig {
         minSdk = 23
-        targetSdk = 35
+        targetSdk = 36
         versionCode = 5046000
         versionName = "5.46.0"
         testInstrumentationRunner = "android.support.test.runner.AndroidJUnitRunner"
