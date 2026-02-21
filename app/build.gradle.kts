@@ -1,3 +1,4 @@
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.apache.tools.ant.taskdefs.condition.Os
 
 plugins {
@@ -12,7 +13,9 @@ android {
         sourceCompatibility = javaVersion
         targetCompatibility = javaVersion
     }
-    kotlinOptions.jvmTarget = javaVersion.toString()
+    kotlin {
+        compilerOptions.jvmTarget = JvmTarget.JVM_1_8
+    }
     namespace = "com.github.shadowsocks.plugin.v2ray"
     defaultConfig {
         minSdk = 23
